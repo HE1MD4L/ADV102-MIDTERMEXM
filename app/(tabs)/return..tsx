@@ -317,7 +317,7 @@ export default function ReturnScreen() {
                   </TouchableOpacity>
                 </View>
 
-                {/* Web Date Picker */}
+                {/* Web Date Picker - REMOVED THE MAX DATE RESTRICTION */}
                 {Platform.OS === 'web' && showReturnPicker && (
                   <View style={styles.webDateContainer}>
                     <input
@@ -333,7 +333,7 @@ export default function ReturnScreen() {
                           daysLate,
                         });
                       }}
-                      max={new Date().toISOString().split('T')[0]}
+                      // REMOVED: max={new Date().toISOString().split('T')[0]}
                       style={{
                         width: '100%',
                         padding: '12px',
@@ -358,7 +358,7 @@ export default function ReturnScreen() {
                   </View>
                 )}
 
-                {/* Native Date Picker */}
+                {/* Native Date Picker - REMOVED THE MAX DATE RESTRICTION */}
                 {Platform.OS !== 'web' && showReturnPicker && (
                   <>
                     <DateTimePicker
@@ -366,7 +366,7 @@ export default function ReturnScreen() {
                       mode="date"
                       display={Platform.OS === 'ios' ? 'spinner' : 'calendar'}
                       onChange={onDateChange}
-                      maximumDate={new Date()}
+                      // REMOVED: maximumDate={new Date()}
                     />
                     {Platform.OS === 'ios' && (
                       <View style={styles.iosButtonContainer}>
